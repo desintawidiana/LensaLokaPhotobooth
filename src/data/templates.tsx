@@ -9,10 +9,14 @@ import {
   Smile,
   Cloud,
   Flower2,
+  Ghost,
+  Moon,
+  Anchor,
+  Coffee,
 } from 'lucide-react'
 export const TEMPLATES: Template[] = [
   // ============================================================
-  // DENIM Y2K THEME (inspired by the navy denim reference)
+  // DENIM Y2K THEME (Kept the best 3)
   // ============================================================
   {
     id: 'denim-pocket',
@@ -45,80 +49,6 @@ export const TEMPLATES: Template[] = [
         <div className="absolute -top-3 -left-2 text-4xl">🌸</div>
         <div className="absolute top-[35%] -right-3 text-3xl rotate-12">🦋</div>
         <div className="absolute bottom-[20%] -left-2 text-3xl">⭐</div>
-        <div
-          className="font-mono text-[9px] text-[#f5e6d3] text-center font-bold bg-[#4a6fa5] py-1.5 px-3 rounded-full border-2 border-[#f5e6d3] shadow-sm mx-2 mb-1"
-          style={{
-            borderStyle: 'dashed',
-          }}
-        >
-          ✦ LensaLoka Denim ✦
-        </div>
-      </div>
-    ),
-  },
-  {
-    id: 'denim-star',
-    name: 'Denim Star',
-    section: 'biasa',
-    frameCount: 3,
-    frameShape: 'star',
-    defaultBg: '#2c4a6e',
-    renderBackground: () => (
-      <div
-        className="absolute inset-0 bg-[#2c4a6e]"
-        style={{
-          backgroundImage:
-            'linear-gradient(45deg, rgba(74,111,165,0.15) 25%, transparent 25%, transparent 75%, rgba(74,111,165,0.15) 75%), linear-gradient(-45deg, rgba(74,111,165,0.15) 25%, transparent 25%, transparent 75%, rgba(74,111,165,0.15) 75%)',
-          backgroundSize: '6px 6px',
-        }}
-      ></div>
-    ),
-    renderForeground: () => (
-      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-4">
-        <div className="absolute -top-2 -left-2 text-4xl">⭐</div>
-        <div className="absolute top-[40%] -right-3 text-3xl">💛</div>
-        <div className="absolute bottom-[18%] -left-2 text-2xl">✨</div>
-        <div
-          className="font-mono text-[9px] text-[#f5e6d3] text-center font-bold bg-[#2c4a6e] py-1.5 px-3 rounded-full border-2 border-[#f5e6d3] shadow-sm mx-2 mb-1"
-          style={{
-            borderStyle: 'dashed',
-          }}
-        >
-          ★ LensaLoka ★
-        </div>
-      </div>
-    ),
-  },
-  {
-    id: 'denim-heart',
-    name: 'Denim Heart',
-    section: 'biasa',
-    frameCount: 3,
-    frameShape: 'heart',
-    defaultBg: '#4a6fa5',
-    renderBackground: () => (
-      <div
-        className="absolute inset-0 bg-[#0d1b3e]"
-        style={{
-          backgroundImage:
-            'radial-gradient(circle, rgba(74,111,165,0.25) 3px, transparent 3px)',
-          backgroundSize: '20px 20px',
-        }}
-      ></div>
-    ),
-    renderForeground: () => (
-      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-4">
-        <div className="absolute -top-3 -left-2 text-4xl">💛</div>
-        <div className="absolute top-[38%] -right-3 text-3xl rotate-12">🌸</div>
-        <div className="absolute bottom-[20%] -left-2 text-2xl">✨</div>
-        <div
-          className="font-mono text-[9px] text-[#f5e6d3] text-center font-bold bg-[#4a6fa5] py-1.5 px-3 rounded-full border-2 border-[#f5e6d3] shadow-sm mx-2 mb-1"
-          style={{
-            borderStyle: 'dashed',
-          }}
-        >
-          ♡ LensaLoka ♡
-        </div>
       </div>
     ),
   },
@@ -145,19 +75,217 @@ export const TEMPLATES: Template[] = [
         </div>
         <div className="absolute top-[35%] -right-3 text-3xl">🦋</div>
         <div className="absolute bottom-[18%] -left-2 text-3xl">🌸</div>
-        <div
-          className="font-pacifico text-[#f5e6d3] text-center text-lg bg-[#2c4a6e]/80 py-1 px-4 rounded-full border-2 border-[#f5e6d3] shadow-sm mx-2 mb-1"
-          style={{
-            borderStyle: 'dashed',
-          }}
-        >
-          LensaLoka
-        </div>
+      </div>
+    ),
+  },
+  {
+    id: 'denim-scallop',
+    name: 'Denim Scallop',
+    section: 'instagram',
+    frameCount: 2,
+    frameShape: 'scallop',
+    defaultBg: '#0d1b3e',
+    renderBackground: () => (
+      <div
+        className="absolute inset-0 bg-[#0d1b3e]"
+        style={{
+          backgroundImage:
+            'radial-gradient(circle, rgba(74,111,165,0.3) 2px, transparent 2px)',
+          backgroundSize: '24px 24px',
+        }}
+      ></div>
+    ),
+    renderForeground: () => (
+      <div className="absolute inset-0 pointer-events-none p-4 flex flex-col justify-between">
+        <div className="text-center text-3xl mt-1">🎀</div>
+        <div className="absolute top-[8%] -left-2 text-3xl">💛</div>
+        <div className="absolute bottom-[15%] -right-2 text-3xl">🌸</div>
       </div>
     ),
   },
   // ============================================================
-  // FILM THEME (vintage film aesthetic)
+  // COWBOY / WESTERN THEME
+  // ============================================================
+  {
+    id: 'cowboy-star',
+    name: 'Sheriff Star',
+    section: 'biasa',
+    frameCount: 3,
+    frameShape: 'star',
+    defaultBg: '#8b4513',
+    renderBackground: () => (
+      <div
+        className="absolute inset-0 bg-[#8b4513]"
+        style={{
+          backgroundImage:
+            'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(210,180,140,0.15) 10px, rgba(210,180,140,0.15) 20px)',
+        }}
+      >
+        <div className="absolute top-4 left-2 text-[#d2b48c] rotate-12">
+          <Star size={36} fill="currentColor" />
+        </div>
+        <div className="absolute bottom-10 right-2 text-[#d2b48c] -rotate-12">
+          <Star size={40} fill="currentColor" />
+        </div>
+      </div>
+    ),
+    renderForeground: () => (
+      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-4">
+        <div className="font-cherry text-2xl text-[#f5deb3] text-center drop-shadow-sm mt-1">
+          HOWDY!
+        </div>
+        <div className="absolute top-[15%] -left-2 text-4xl rotate-[-15deg]">
+          🤠
+        </div>
+        <div className="absolute top-[45%] -right-2 text-4xl rotate-[15deg]">
+          🌵
+        </div>
+        <div className="absolute bottom-[20%] -left-2 text-3xl">🐴</div>
+      </div>
+    ),
+  },
+  {
+    id: 'cowboy-arch',
+    name: 'Desert Arch',
+    section: 'biasa',
+    frameCount: 3,
+    frameShape: 'arch',
+    defaultBg: '#d2b48c',
+    renderBackground: () => (
+      <div className="absolute inset-0 bg-gradient-to-b from-[#f4a460] to-[#d2b48c]">
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage:
+              'radial-gradient(circle, #8b4513 2px, transparent 2px)',
+            backgroundSize: '20px 20px',
+          }}
+        />
+      </div>
+    ),
+    renderForeground: () => (
+      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-4">
+        <div className="absolute -top-2 left-1/2 -translate-x-1/2 text-4xl">
+          👢
+        </div>
+        <div className="absolute top-[35%] -right-3 text-3xl">🪢</div>
+        <div className="absolute bottom-[18%] -left-2 text-3xl">🌵</div>
+      </div>
+    ),
+  },
+  {
+    id: 'cowboy-rect',
+    name: 'Western Bandana',
+    section: 'instagram',
+    frameCount: 2,
+    frameShape: 'rect',
+    defaultBg: '#cd5c5c',
+    renderBackground: () => (
+      <div
+        className="absolute inset-0 bg-[#cd5c5c]"
+        style={{
+          backgroundImage:
+            'linear-gradient(45deg, rgba(255,255,255,0.2) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.2) 75%), linear-gradient(-45deg, rgba(255,255,255,0.2) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.2) 75%)',
+          backgroundSize: '20px 20px',
+        }}
+      ></div>
+    ),
+    renderForeground: () => (
+      <div className="absolute inset-0 pointer-events-none p-4 flex flex-col justify-between">
+        <div className="text-center text-3xl mt-1">🤠</div>
+        <div className="absolute top-[8%] -left-2 text-3xl">⭐</div>
+        <div className="absolute bottom-[15%] -right-2 text-3xl">🐴</div>
+      </div>
+    ),
+  },
+  // ============================================================
+  // HALLOWEEN / SPOOKY THEME
+  // ============================================================
+  {
+    id: 'spooky-blob',
+    name: 'Spooky Blob',
+    section: 'biasa',
+    frameCount: 3,
+    frameShape: 'blob',
+    defaultBg: '#4b0082',
+    renderBackground: () => (
+      <div className="absolute inset-0 bg-gradient-to-b from-[#2e0854] to-[#4b0082]">
+        <div className="absolute top-4 left-2 text-purple-300/40 rotate-12">
+          <Ghost size={36} fill="currentColor" />
+        </div>
+        <div className="absolute bottom-10 right-2 text-purple-300/40 -rotate-12">
+          <Moon size={40} fill="currentColor" />
+        </div>
+      </div>
+    ),
+    renderForeground: () => (
+      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-4">
+        <div className="font-cherry text-2xl text-[#ff8c00] text-center drop-shadow-[0_2px_0_#000] mt-1">
+          BOO!
+        </div>
+        <div className="absolute top-[15%] -left-2 text-4xl rotate-[-15deg]">
+          👻
+        </div>
+        <div className="absolute top-[45%] -right-2 text-4xl rotate-[15deg]">
+          🎃
+        </div>
+        <div className="absolute bottom-[20%] -left-2 text-3xl">🦇</div>
+      </div>
+    ),
+  },
+  {
+    id: 'spooky-cat',
+    name: 'Black Cat',
+    section: 'biasa',
+    frameCount: 3,
+    frameShape: 'cat',
+    defaultBg: '#1a1a1a',
+    renderBackground: () => (
+      <div
+        className="absolute inset-0 bg-[#1a1a1a]"
+        style={{
+          backgroundImage:
+            'radial-gradient(circle, #ff8c00 2px, transparent 2px)',
+          backgroundSize: '24px 24px',
+        }}
+      ></div>
+    ),
+    renderForeground: () => (
+      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-4">
+        <div className="absolute -top-2 left-1/2 -translate-x-1/2 text-4xl">
+          🐈‍⬛
+        </div>
+        <div className="absolute top-[35%] -right-3 text-3xl">🕸️</div>
+        <div className="absolute bottom-[18%] -left-2 text-3xl">🍬</div>
+      </div>
+    ),
+  },
+  {
+    id: 'spooky-circle',
+    name: 'Magic Moon',
+    section: 'instagram',
+    frameCount: 2,
+    frameShape: 'circle',
+    defaultBg: '#ff8c00',
+    renderBackground: () => (
+      <div
+        className="absolute inset-0 bg-[#ff8c00]"
+        style={{
+          backgroundImage:
+            'repeating-linear-gradient(45deg, transparent, transparent 15px, rgba(0,0,0,0.1) 15px, rgba(0,0,0,0.1) 30px)',
+        }}
+      ></div>
+    ),
+    renderForeground: () => (
+      <div className="absolute inset-0 pointer-events-none p-4 flex flex-col justify-between">
+        <div className="text-center text-3xl mt-1">🌙</div>
+        <div className="absolute top-[8%] -left-2 text-3xl">🦇</div>
+        <div className="absolute bottom-[15%] -right-2 text-3xl">🔮</div>
+      </div>
+    ),
+  },
+  // ============================================================
+  // FILM THEME
   // ============================================================
   {
     id: 'film-strip',
@@ -197,9 +325,6 @@ export const TEMPLATES: Template[] = [
         <div className="absolute bottom-[10%] right-2 text-xl text-[#d4af37]">
           ✨
         </div>
-        <div className="font-mono text-[9px] text-[#d4af37] text-center font-bold bg-black/60 py-1 px-3 rounded mx-2 mb-1">
-          LENSALOKA · FILM
-        </div>
       </div>
     ),
   },
@@ -234,44 +359,128 @@ export const TEMPLATES: Template[] = [
         <div className="absolute bottom-[15%] -right-2 text-3xl text-[#d4af37]">
           📸
         </div>
-        <div className="font-mono text-[9px] text-[#d4af37] text-center font-bold bg-black/60 py-1 px-3 rounded mx-auto mb-1">
-          LENSALOKA · 35mm
-        </div>
       </div>
     ),
   },
   // ============================================================
-  // DREAMY PASTEL THEME (soft, airy, minimal)
+  // OCEAN / BEACH THEME
   // ============================================================
   {
-    id: 'dreamy-cloud',
-    name: 'Dreamy Cloud',
+    id: 'ocean-scallop',
+    name: 'Ocean Waves',
     section: 'biasa',
     frameCount: 3,
-    frameShape: 'cloud',
-    defaultBg: '#e0f2fe',
+    frameShape: 'scallop',
+    defaultBg: '#0ea5e9',
     renderBackground: () => (
-      <div className="absolute inset-0 bg-gradient-to-b from-[#ddd6fe] via-[#e0f2fe] to-[#fce7f3]">
-        <div className="absolute top-8 left-2 text-white/40">
-          <Cloud size={40} fill="currentColor" />
-        </div>
-        <div className="absolute bottom-12 right-2 text-white/40">
-          <Cloud size={36} fill="currentColor" />
-        </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-[#38bdf8] to-[#0284c7]">
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage:
+              'radial-gradient(circle, #fff 2px, transparent 2px)',
+            backgroundSize: '20px 20px',
+          }}
+        />
       </div>
     ),
     renderForeground: () => (
       <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-4">
-        <div className="text-center text-3xl mt-1">☁️</div>
-        <div className="absolute top-[15%] -left-2 text-3xl">✨</div>
-        <div className="absolute top-[45%] -right-2 text-3xl">🌙</div>
-        <div className="absolute bottom-[20%] -left-2 text-2xl">⭐</div>
-        <div className="font-pacifico text-purple-400 text-center text-lg bg-white/80 py-1 px-4 rounded-full border border-purple-200 shadow-sm mx-2 mb-1">
-          LensaLoka
+        <div className="absolute -top-2 left-1/2 -translate-x-1/2 text-4xl">
+          🌊
         </div>
+        <div className="absolute top-[35%] -right-3 text-3xl">🐚</div>
+        <div className="absolute bottom-[18%] -left-2 text-3xl">🐠</div>
       </div>
     ),
   },
+  {
+    id: 'beach-oval',
+    name: 'Beach Day',
+    section: 'instagram',
+    frameCount: 2,
+    frameShape: 'oval',
+    defaultBg: '#fde047',
+    renderBackground: () => (
+      <div
+        className="absolute inset-0 bg-[#fde047]"
+        style={{
+          backgroundImage:
+            'repeating-linear-gradient(45deg, transparent, transparent 15px, rgba(255,255,255,0.3) 15px, rgba(255,255,255,0.3) 30px)',
+        }}
+      ></div>
+    ),
+    renderForeground: () => (
+      <div className="absolute inset-0 pointer-events-none p-4 flex flex-col justify-between">
+        <div className="text-center text-3xl mt-1">☀️</div>
+        <div className="absolute top-[8%] -left-2 text-3xl">🌴</div>
+        <div className="absolute bottom-[15%] -right-2 text-3xl">🍹</div>
+      </div>
+    ),
+  },
+  // ============================================================
+  // MATCHA CAFE THEME
+  // ============================================================
+  {
+    id: 'matcha-cloud',
+    name: 'Matcha Cloud',
+    section: 'biasa',
+    frameCount: 3,
+    frameShape: 'cloud',
+    defaultBg: '#86efac',
+    renderBackground: () => (
+      <div
+        className="absolute inset-0 bg-[#dcfce7]"
+        style={{
+          backgroundImage:
+            'repeating-conic-gradient(#86efac 0% 25%, transparent 0% 50%)',
+          backgroundSize: '30px 30px',
+        }}
+      ></div>
+    ),
+    renderForeground: () => (
+      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-4">
+        <div className="font-cherry text-2xl text-[#166534] text-center drop-shadow-sm mt-1">
+          MATCHA
+        </div>
+        <div className="absolute top-[15%] -left-2 text-4xl rotate-[-15deg]">
+          🍵
+        </div>
+        <div className="absolute top-[45%] -right-2 text-4xl rotate-[15deg]">
+          🍰
+        </div>
+        <div className="absolute bottom-[20%] -left-2 text-3xl">🌿</div>
+      </div>
+    ),
+  },
+  {
+    id: 'cafe-arch',
+    name: 'Cafe Arch',
+    section: 'instagram',
+    frameCount: 2,
+    frameShape: 'arch',
+    defaultBg: '#d6d3d1',
+    renderBackground: () => (
+      <div
+        className="absolute inset-0 bg-[#f5f5f4]"
+        style={{
+          backgroundImage:
+            'linear-gradient(#e7e5e4 1px, transparent 1px), linear-gradient(90deg, #e7e5e4 1px, transparent 1px)',
+          backgroundSize: '20px 20px',
+        }}
+      ></div>
+    ),
+    renderForeground: () => (
+      <div className="absolute inset-0 pointer-events-none p-4 flex flex-col justify-between">
+        <div className="text-center text-3xl mt-1">☕</div>
+        <div className="absolute top-[8%] -left-2 text-3xl">🥐</div>
+        <div className="absolute bottom-[15%] -right-2 text-3xl">🤎</div>
+      </div>
+    ),
+  },
+  // ============================================================
+  // DREAMY PASTEL THEME
+  // ============================================================
   {
     id: 'dreamy-circle',
     name: 'Dreamy Circle',
@@ -301,9 +510,6 @@ export const TEMPLATES: Template[] = [
           ✨
         </div>
         <div className="absolute bottom-[18%] -left-2 text-2xl">🦋</div>
-        <div className="font-cherry text-pink-400 text-center text-lg bg-white/90 py-1 px-4 rounded-full border-2 border-pink-200 shadow-sm mx-2 mb-1">
-          Dreamy
-        </div>
       </div>
     ),
   },
@@ -330,44 +536,11 @@ export const TEMPLATES: Template[] = [
         <div className="text-center text-3xl mt-1">⭐</div>
         <div className="absolute top-[8%] -left-2 text-3xl">✨</div>
         <div className="absolute bottom-[15%] -right-2 text-3xl">🌟</div>
-        <div className="font-mono text-[9px] text-purple-600 text-center font-bold bg-white py-1 px-3 rounded-full border border-purple-300 mx-auto mb-1">
-          ⭐ LensaLoka ⭐
-        </div>
-      </div>
-    ),
-  },
-  {
-    id: 'pastel-heart',
-    name: 'Pastel Heart',
-    section: 'instagram',
-    frameCount: 2,
-    frameShape: 'heart',
-    defaultBg: '#fef3c7',
-    renderBackground: () => (
-      <div className="absolute inset-0 bg-gradient-to-br from-[#fef3c7] to-[#fde68a]">
-        <div
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage:
-              'radial-gradient(circle, rgba(255,255,255,0.5) 3px, transparent 3px)',
-            backgroundSize: '18px 18px',
-          }}
-        />
-      </div>
-    ),
-    renderForeground: () => (
-      <div className="absolute inset-0 pointer-events-none p-4 flex flex-col justify-between">
-        <div className="text-center text-3xl mt-1">💛</div>
-        <div className="absolute top-[8%] -left-2 text-3xl">🌻</div>
-        <div className="absolute bottom-[15%] -right-2 text-3xl">✨</div>
-        <div className="font-pacifico text-yellow-600 text-center text-sm bg-white/90 py-1 px-3 rounded-full border border-yellow-300 shadow-sm mx-2 mb-1">
-          LensaLoka
-        </div>
       </div>
     ),
   },
   // ============================================================
-  // CANDY DOODLE THEME (keep some polished bright ones)
+  // CANDY DOODLE THEME
   // ============================================================
   {
     id: 'heart-stripes',
@@ -404,86 +577,6 @@ export const TEMPLATES: Template[] = [
           💖
         </div>
         <div className="absolute bottom-[18%] -left-2 text-2xl">💗</div>
-        <div className="font-mono text-[9px] text-pink-600 text-center font-bold bg-white py-1 px-3 rounded-full border-2 border-pink-300 shadow-sm mx-2 mb-1">
-          ♡ LensaLoka ♡
-        </div>
-      </div>
-    ),
-  },
-  {
-    id: 'cloud-checker',
-    name: 'Cloud Checker',
-    section: 'biasa',
-    frameCount: 3,
-    frameShape: 'cloud',
-    defaultBg: '#ff4444',
-    renderBackground: () => (
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage:
-            'repeating-conic-gradient(#ff4444 0% 25%, #ffffff 0% 50%)',
-          backgroundSize: '40px 40px',
-        }}
-      >
-        <div className="absolute top-6 left-2 text-white">
-          <Cloud size={36} fill="currentColor" />
-        </div>
-        <div className="absolute bottom-12 right-2 text-white">
-          <Cloud size={44} fill="currentColor" />
-        </div>
-      </div>
-    ),
-    renderForeground: () => (
-      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-4">
-        <div className="font-cherry text-2xl text-white text-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] mt-1">
-          DREAMY
-        </div>
-        <div className="absolute top-[15%] -left-3 text-4xl">⭐</div>
-        <div className="absolute top-[45%] -right-3 text-4xl">✨</div>
-        <div className="absolute bottom-[20%] -left-2 text-3xl">☁️</div>
-        <div className="font-mono text-[9px] text-red-600 text-center font-bold bg-white py-1 px-3 rounded-full border-2 border-red-400 shadow-sm mx-2 mb-1">
-          ☁ LensaLoka ☁
-        </div>
-      </div>
-    ),
-  },
-  {
-    id: 'scallop-dots',
-    name: 'Scallop Dots',
-    section: 'biasa',
-    frameCount: 4,
-    frameShape: 'scallop',
-    defaultBg: '#ffeb3b',
-    renderBackground: () => (
-      <div
-        className="absolute inset-0 bg-[#ffeb3b]"
-        style={{
-          backgroundImage:
-            'radial-gradient(circle, #ffffff 3px, transparent 3px)',
-          backgroundSize: '24px 24px',
-        }}
-      >
-        <div className="absolute top-4 left-2 text-yellow-700 rotate-12">
-          <Star size={32} fill="currentColor" />
-        </div>
-        <div className="absolute bottom-8 right-2 text-yellow-700 -rotate-12">
-          <Star size={38} fill="currentColor" />
-        </div>
-      </div>
-    ),
-    renderForeground: () => (
-      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-4">
-        <div className="font-cherry text-2xl text-yellow-800 text-center drop-shadow-sm mt-1">
-          SUNNY!
-        </div>
-        <div className="absolute top-[10%] -left-2 text-3xl">🌟</div>
-        <div className="absolute top-[35%] -right-2 text-3xl">⭐</div>
-        <div className="absolute bottom-[25%] -left-2 text-2xl">✨</div>
-        <div className="absolute bottom-[10%] -right-2 text-2xl">💫</div>
-        <div className="font-mono text-[9px] text-yellow-800 text-center font-bold bg-white py-1 px-3 rounded-full border-2 border-yellow-400 shadow-sm mx-2 mb-1">
-          ☀ LensaLoka ☀
-        </div>
       </div>
     ),
   },
@@ -522,112 +615,6 @@ export const TEMPLATES: Template[] = [
         <div className="absolute bottom-[15%] -right-2 text-3xl rotate-[12deg]">
           🌿
         </div>
-        <div className="font-mono text-[9px] text-green-800 text-center font-bold bg-white py-1 px-3 rounded-full border-2 border-green-400 shadow-sm mx-auto mb-1">
-          🌿 LensaLoka 🌿
-        </div>
-      </div>
-    ),
-  },
-  {
-    id: 'cat-grid',
-    name: 'Cat Grid',
-    section: 'instagram',
-    frameCount: 2,
-    frameShape: 'cat',
-    defaultBg: '#4169e1',
-    renderBackground: () => (
-      <div
-        className="absolute inset-0 bg-[#4169e1]"
-        style={{
-          backgroundImage:
-            'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)',
-          backgroundSize: '20px 20px',
-        }}
-      ></div>
-    ),
-    renderForeground: () => (
-      <div className="absolute inset-0 pointer-events-none p-4 flex flex-col justify-between">
-        <div className="font-cherry text-xl text-white text-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] mt-1">
-          MEOW!
-        </div>
-        <div className="absolute top-[8%] -left-2 text-3xl rotate-[-10deg]">
-          🐱
-        </div>
-        <div className="absolute bottom-[15%] -right-2 text-3xl rotate-[10deg]">
-          🐾
-        </div>
-        <div className="font-mono text-[9px] text-blue-700 text-center font-bold bg-white py-1 px-3 rounded-full border-2 border-blue-400 shadow-sm mx-auto mb-1">
-          🐱 LensaLoka 🐾
-        </div>
-      </div>
-    ),
-  },
-  // ============================================================
-  // MORE DENIM Y2K VARIATIONS (instagram section)
-  // ============================================================
-  {
-    id: 'denim-circle',
-    name: 'Denim Circle',
-    section: 'instagram',
-    frameCount: 2,
-    frameShape: 'circle',
-    defaultBg: '#4a6fa5',
-    renderBackground: () => (
-      <div
-        className="absolute inset-0 bg-[#2c4a6e]"
-        style={{
-          backgroundImage:
-            'linear-gradient(45deg, rgba(74,111,165,0.15) 25%, transparent 25%, transparent 75%, rgba(74,111,165,0.15) 75%), linear-gradient(-45deg, rgba(74,111,165,0.15) 25%, transparent 25%, transparent 75%, rgba(74,111,165,0.15) 75%)',
-          backgroundSize: '6px 6px',
-        }}
-      ></div>
-    ),
-    renderForeground: () => (
-      <div className="absolute inset-0 pointer-events-none p-4 flex flex-col justify-between">
-        <div className="text-center text-3xl mt-1">🌸</div>
-        <div className="absolute top-[8%] -left-2 text-3xl">🦋</div>
-        <div className="absolute bottom-[15%] -right-2 text-3xl">⭐</div>
-        <div
-          className="font-mono text-[9px] text-[#f5e6d3] text-center font-bold bg-[#4a6fa5] py-1 px-3 rounded-full border-2 border-[#f5e6d3] shadow-sm mx-auto mb-1"
-          style={{
-            borderStyle: 'dashed',
-          }}
-        >
-          ✦ LensaLoka ✦
-        </div>
-      </div>
-    ),
-  },
-  {
-    id: 'denim-scallop',
-    name: 'Denim Scallop',
-    section: 'instagram',
-    frameCount: 2,
-    frameShape: 'scallop',
-    defaultBg: '#0d1b3e',
-    renderBackground: () => (
-      <div
-        className="absolute inset-0 bg-[#0d1b3e]"
-        style={{
-          backgroundImage:
-            'radial-gradient(circle, rgba(74,111,165,0.3) 2px, transparent 2px)',
-          backgroundSize: '24px 24px',
-        }}
-      ></div>
-    ),
-    renderForeground: () => (
-      <div className="absolute inset-0 pointer-events-none p-4 flex flex-col justify-between">
-        <div className="text-center text-3xl mt-1">🎀</div>
-        <div className="absolute top-[8%] -left-2 text-3xl">💛</div>
-        <div className="absolute bottom-[15%] -right-2 text-3xl">🌸</div>
-        <div
-          className="font-pacifico text-[#f5e6d3] text-center text-sm bg-[#4a6fa5]/80 py-1 px-3 rounded-full border-2 border-[#f5e6d3] shadow-sm mx-2 mb-1"
-          style={{
-            borderStyle: 'dashed',
-          }}
-        >
-          LensaLoka
-        </div>
       </div>
     ),
   },
@@ -663,6 +650,15 @@ export const BG_COLORS = [
   '#2c4a6e',
   '#4a6fa5',
   '#f5e6d3',
+  '#8b4513',
+  '#d2b48c',
+  '#cd5c5c',
+  '#4b0082',
+  '#ff8c00',
+  '#0ea5e9',
+  '#fde047',
+  '#86efac',
+  '#d6d3d1',
 ]
 export const FILTERS: Filter[] = [
   {
@@ -764,4 +760,13 @@ export const STICKERS = [
   '🔮',
   '✦',
   '◈',
+  '🤠',
+  '🌵',
+  '🐴',
+  '👢',
+  '🎃',
+  '👻',
+  '🦇',
+  '🕸️',
+  '🍬',
 ]

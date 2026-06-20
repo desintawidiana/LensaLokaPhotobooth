@@ -4,20 +4,397 @@ import {
   Heart,
   Star,
   Sparkles,
+  Cherry,
+  Ribbon,
+  Clapperboard,
+  Palmtree,
+  Sun,
+  Waves,
+  Music,
+  Cloud,
+  Moon,
+  Cat,
+  Sparkle,
+  Smile,
+  Coffee,
+  Croissant,
+  Cake,
+  Pizza,
+  Utensils,
+  Cookie,
+  Gamepad2,
   Film,
   Camera,
-  Smile,
-  Cloud,
-  Flower2,
   Ghost,
-  Moon,
-  Anchor,
-  Coffee,
+  Zap,
 } from 'lucide-react'
 export const TEMPLATES: Template[] = [
   // ============================================================
-  // DENIM Y2K THEME (Kept the best 3)
+  // STRIP BIASA (MEMANJANG) – 3-4 FRAMES
   // ============================================================
+  {
+    id: 'y2k-star',
+    name: 'Y2K Starburst',
+    section: 'biasa',
+    frameCount: 4,
+    frameShape: 'star',
+    defaultBg: '#FFB6C1',
+    renderBackground: () => (
+      <div className="absolute inset-0 overflow-hidden opacity-30">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              'radial-gradient(currentColor 3px, transparent 3px)',
+            backgroundSize: '20px 20px',
+            color: 'rgba(255,255,255,0.8)',
+          }}
+        />
+        <div className="absolute top-4 left-4 text-white rotate-12">
+          <Star size={40} fill="currentColor" />
+        </div>
+        <div className="absolute top-24 right-2 text-white -rotate-12">
+          <Sparkles size={24} />
+        </div>
+        <div className="absolute bottom-12 right-4 text-white -rotate-12">
+          <Star size={55} fill="currentColor" />
+        </div>
+      </div>
+    ),
+    renderForeground: () => (
+      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-4">
+        <div className="font-cherry text-3xl text-white text-center tracking-wider drop-shadow-[0_2px_0_rgba(0,0,0,0.2)] mt-1">
+          SUPER CUTE
+        </div>
+        <div className="absolute top-[10%] left-2 text-4xl">✨</div>
+        <div className="absolute top-[10%] right-2 text-4xl">⭐</div>
+        <div className="absolute bottom-[20%] left-2 text-3xl">💖</div>
+        <div className="absolute bottom-[20%] right-2 text-3xl">🌟</div>
+      </div>
+    ),
+  },
+  {
+    id: 'strawberry-jam',
+    name: 'Strawberry Jam',
+    section: 'biasa',
+    frameCount: 3,
+    frameShape: 'blob',
+    defaultBg: '#FFE4E1',
+    renderBackground: () => (
+      <div
+        className="absolute inset-0 opacity-40"
+        style={{
+          backgroundImage:
+            'radial-gradient(currentColor 2.5px, transparent 2.5px)',
+          backgroundSize: '24px 24px',
+          color: 'rgba(255,255,255,0.9)',
+        }}
+      />
+    ),
+    renderForeground: () => (
+      <div className="absolute inset-0 pointer-events-none border-8 border-white/30 rounded-xl m-2 flex flex-col justify-between">
+        <div className="absolute -top-3 -left-3 text-4xl animate-bounce">
+          🍓
+        </div>
+        <div className="absolute -bottom-3 -right-3 text-4xl animate-bounce">
+          🍓
+        </div>
+        <div className="absolute top-[15%] -right-3 text-2xl rotate-12">🌸</div>
+        <div className="absolute bottom-[15%] -left-3 text-2xl -rotate-12">
+          🌸
+        </div>
+        <div className="absolute bottom-4 w-full text-center font-pacifico text-white text-xl drop-shadow-md bg-black/20 py-1 backdrop-blur-[1px]">
+          Berry Sweet
+        </div>
+      </div>
+    ),
+  },
+  {
+    id: 'vintage-film',
+    name: 'Vintage Film',
+    section: 'biasa',
+    frameCount: 3,
+    frameShape: 'rect',
+    defaultBg: '#2C1810',
+    renderBackground: () => (
+      <div className="absolute inset-0 border-x-[16px] border-black/90 flex flex-col justify-between py-2 bg-gradient-to-b from-black/40 to-transparent">
+        {Array.from({
+          length: 22,
+        }).map((_, i) => (
+          <div key={i} className="w-full flex justify-between px-1">
+            <div className="w-2 h-2.5 bg-white/80 rounded-sm" />
+            <div className="w-2 h-2.5 bg-white/80 rounded-sm" />
+          </div>
+        ))}
+      </div>
+    ),
+    renderForeground: () => (
+      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-4">
+        <div className="flex justify-between items-center text-[#D4AF37] px-2 mt-1">
+          <Camera size={20} />
+          <span className="font-mono text-[10px] tracking-widest font-bold bg-black/50 px-1 rounded">
+            ISO 400
+          </span>
+          <Sparkle size={16} fill="currentColor" />
+        </div>
+        <div className="absolute top-[12%] left-3 text-4xl text-[#D4AF37]">
+          🎞️
+        </div>
+        <div className="absolute top-[12%] right-3 text-4xl text-[#D4AF37]">
+          🎬
+        </div>
+        <div className="absolute bottom-[20%] left-4 text-2xl text-[#D4AF37]/60">
+          📸
+        </div>
+        <div className="absolute bottom-[20%] right-4 text-2xl text-[#D4AF37]/60">
+          ✨
+        </div>
+        <div className="font-pacifico text-[#D4AF37] text-lg text-center tracking-wide bg-black/60 py-1 rounded mx-2 mb-1">
+          Capturing Moments
+        </div>
+      </div>
+    ),
+  },
+  {
+    id: 'coquette-bow',
+    name: 'Coquette Bow',
+    section: 'biasa',
+    frameCount: 4,
+    frameShape: 'heart',
+    defaultBg: '#FFF0F5',
+    renderBackground: () => (
+      <div className="absolute inset-0 border-[6px] border-white/60 border-dashed m-2 rounded-2xl opacity-70">
+        <div className="absolute top-20 left-4 text-white">
+          <Heart size={16} fill="currentColor" />
+        </div>
+        <div className="absolute bottom-32 right-4 text-white">
+          <Heart size={20} fill="currentColor" />
+        </div>
+      </div>
+    ),
+    renderForeground: () => (
+      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between">
+        <div className="absolute top-1 left-1/2 -translate-x-1/2 text-white drop-shadow-md">
+          <Ribbon size={44} />
+        </div>
+        <div className="absolute top-[15%] -left-2 text-4xl rotate-[-15deg]">
+          🎀
+        </div>
+        <div className="absolute top-[15%] -right-2 text-4xl rotate-[15deg]">
+          🎀
+        </div>
+        <div className="absolute bottom-[20%] left-3 text-2xl">💕</div>
+        <div className="absolute bottom-[20%] right-3 text-2xl">💗</div>
+        <div className="absolute bottom-6 w-full text-center font-pacifico text-white text-lg bg-black/10 py-0.5 border-y border-white/30 backdrop-blur-sm">
+          🎀 coquette 🎀
+        </div>
+      </div>
+    ),
+  },
+  {
+    id: 'movie-night',
+    name: 'Movie Night',
+    section: 'biasa',
+    frameCount: 3,
+    frameShape: 'arch',
+    defaultBg: '#1A1A2E',
+    renderBackground: () => (
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.1),_transparent)] opacity-50" />
+        <div className="absolute top-0 w-full h-8 bg-black/80 flex justify-around items-center">
+          {Array.from({
+            length: 8,
+          }).map((_, i) => (
+            <div key={i} className="w-4 h-4 bg-white/80 rounded-sm" />
+          ))}
+        </div>
+        <div className="absolute bottom-0 w-full h-8 bg-black/80 flex justify-around items-center">
+          {Array.from({
+            length: 8,
+          }).map((_, i) => (
+            <div key={i} className="w-4 h-4 bg-white/80 rounded-sm" />
+          ))}
+        </div>
+      </div>
+    ),
+    renderForeground: () => (
+      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-6">
+        <div className="flex justify-center mt-4">
+          <Clapperboard className="text-yellow-400 drop-shadow-md" size={40} />
+        </div>
+        <div className="absolute top-[15%] left-3 text-4xl">🍿</div>
+        <div className="absolute top-[15%] right-3 text-4xl">🎟️</div>
+        <div className="absolute bottom-[20%] left-4 text-2xl">🎬</div>
+        <div className="absolute bottom-[20%] right-4 text-2xl">✨</div>
+        <div className="text-center font-mono text-yellow-400 text-sm tracking-widest bg-black/60 py-1 rounded">
+          CINEMA
+        </div>
+      </div>
+    ),
+  },
+  {
+    id: 'cowboy-rodeo',
+    name: 'Cowboy Rodeo',
+    section: 'biasa',
+    frameCount: 3,
+    frameShape: 'star',
+    defaultBg: '#D2B48C',
+    renderBackground: () => (
+      <div
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage:
+            'repeating-linear-gradient(45deg, currentColor 25%, transparent 25%, transparent 75%, currentColor 75%, currentColor), repeating-linear-gradient(45deg, currentColor 25%, transparent 25%, transparent 75%, currentColor 75%, currentColor)',
+          backgroundPosition: '0 0, 10px 10px',
+          backgroundSize: '20px 20px',
+          color: '#000',
+        }}
+      />
+    ),
+    renderForeground: () => (
+      <div className="absolute inset-0 pointer-events-none border-4 border-black/30 m-3 rounded-lg flex flex-col justify-between p-4">
+        <div className="text-center font-mono text-black/70 text-xs font-bold tracking-widest bg-white/40 rounded py-1">
+          🤠 COWBOY LAND ⭐
+        </div>
+        <div className="absolute top-[12%] left-2 text-4xl">🐴</div>
+        <div className="absolute top-[12%] right-2 text-4xl">🤠</div>
+        <div className="absolute bottom-[20%] left-3 text-2xl">🌵</div>
+        <div className="absolute bottom-[20%] right-3 text-2xl">👢</div>
+        <div className="flex justify-between items-end">
+          <div className="text-4xl animate-pulse">🌵</div>
+          <div className="text-4xl">🐴</div>
+        </div>
+      </div>
+    ),
+  },
+  {
+    id: 'summer-beach',
+    name: 'Summer Beach',
+    section: 'biasa',
+    frameCount: 3,
+    frameShape: 'scallop',
+    defaultBg: '#E0FFFF',
+    renderBackground: () => (
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute bottom-0 w-full h-1/3 bg-black/10 opacity-30" />
+        <div className="absolute top-4 right-4 text-white/80">
+          <Sun size={60} fill="currentColor" />
+        </div>
+      </div>
+    ),
+    renderForeground: () => (
+      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-4">
+        <div className="font-pacifico text-white text-3xl text-center mt-2 drop-shadow-md">
+          Beach Vibe
+        </div>
+        <div className="absolute top-[15%] left-2 text-4xl">🍦</div>
+        <div className="absolute top-[15%] right-2 text-4xl">🍹</div>
+        <div className="absolute bottom-[20%] left-3 text-2xl">🏄‍♂️</div>
+        <div className="absolute bottom-[20%] right-3 text-2xl">🏖️</div>
+        <div className="flex justify-between items-end mb-2">
+          <Palmtree className="text-green-600 drop-shadow-sm" size={40} />
+          <Waves className="text-blue-500 drop-shadow-sm" size={40} />
+        </div>
+      </div>
+    ),
+  },
+  {
+    id: 'retro-candy',
+    name: 'Retro Candy',
+    section: 'biasa',
+    frameCount: 4,
+    frameShape: 'circle',
+    defaultBg: '#FF9F1C',
+    renderBackground: () => (
+      <div
+        className="absolute inset-0 opacity-30"
+        style={{
+          backgroundImage:
+            'linear-gradient(45deg, currentColor 25%, transparent 25%), linear-gradient(-45deg, currentColor 25%, transparent 25%), linear-gradient(45deg, transparent 75%, currentColor 75%), linear-gradient(-45deg, transparent 75%, currentColor 75%)',
+          backgroundSize: '30px 30px',
+          backgroundPosition: '0 0, 0 15px, 15px -15px, -15px 0px',
+          color: '#fff',
+        }}
+      />
+    ),
+    renderForeground: () => (
+      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-4">
+        <div className="bg-white/90 text-gray-800 rounded-full px-3 py-1 font-cherry text-center border-2 border-white shadow-md rotate-[-3deg] text-base">
+          CANDY POP!
+        </div>
+        <div className="absolute top-[12%] left-2 text-4xl">🍭</div>
+        <div className="absolute top-[12%] right-2 text-4xl">🍒</div>
+        <div className="absolute bottom-[20%] left-3 text-2xl">✨</div>
+        <div className="absolute bottom-[20%] right-3 text-2xl">🍬</div>
+      </div>
+    ),
+  },
+  {
+    id: 'kawaii-neko',
+    name: 'Kawaii Neko Station',
+    section: 'biasa',
+    frameCount: 4,
+    frameShape: 'cat',
+    defaultBg: '#E8AEB7',
+    renderBackground: () => (
+      <div
+        className="absolute inset-0 opacity-40"
+        style={{
+          backgroundImage: 'radial-gradient(currentColor 4px, transparent 4px)',
+          backgroundSize: '24px 24px',
+          color: '#fff',
+        }}
+      >
+        <div className="absolute top-1/3 right-1 text-white/80">
+          <Cat size={40} fill="currentColor" />
+        </div>
+      </div>
+    ),
+    renderForeground: () => (
+      <div className="absolute inset-0 pointer-events-none p-3 flex flex-col justify-between border-4 border-white/60 m-2 rounded-2xl shadow-inner">
+        <div className="text-3xl text-center bg-white/50 rounded-full py-1">
+          🐾 ฅ(=•́⎑•̀=)
+        </div>
+        <div className="absolute top-[10%] left-2 text-4xl">🐱</div>
+        <div className="absolute top-[10%] right-2 text-4xl">🐟</div>
+        <div className="absolute bottom-[15%] left-3 text-2xl">🥛</div>
+        <div className="absolute bottom-[15%] right-3 text-2xl">✨</div>
+      </div>
+    ),
+  },
+  {
+    id: 'red-collage',
+    name: 'Red Collage',
+    section: 'biasa',
+    frameCount: 3,
+    frameShape: 'rect',
+    defaultBg: '#7A1620',
+    renderBackground: () => (
+      <div
+        className="absolute inset-0 opacity-30"
+        style={{
+          backgroundImage:
+            'repeating-linear-gradient(0deg, transparent, transparent 14px, currentColor 14px, currentColor 28px), repeating-linear-gradient(90deg, transparent, transparent 14px, currentColor 14px, currentColor 28px)',
+          color: 'rgba(255,255,255,0.4)',
+        }}
+      />
+    ),
+    renderForeground: () => (
+      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-4 border-4 border-white/40 m-1">
+        <div className="flex justify-between text-white drop-shadow-md">
+          <Sparkle size={28} fill="currentColor" />
+          <Heart size={28} fill="currentColor" />
+        </div>
+        <div className="absolute top-[12%] left-2 text-4xl">⚡</div>
+        <div className="absolute top-[12%] right-2 text-4xl">💖</div>
+        <div className="absolute bottom-[20%] left-3 text-2xl">🦋</div>
+        <div className="absolute bottom-[20%] right-3 text-2xl">💋</div>
+        <div className="font-cherry text-white text-center text-xl tracking-widest bg-black/40 px-2 py-1 rounded-md border border-white/50">
+          ⚡ COLLAGE ⚡
+        </div>
+      </div>
+    ),
+  },
   {
     id: 'denim-pocket',
     name: 'Denim Pocket',
@@ -27,10 +404,10 @@ export const TEMPLATES: Template[] = [
     defaultBg: '#4a6fa5',
     renderBackground: () => (
       <div
-        className="absolute inset-0 bg-[#0d1b3e]"
+        className="absolute inset-0"
         style={{
           backgroundImage:
-            'radial-gradient(circle, rgba(74,111,165,0.3) 2px, transparent 2px)',
+            'radial-gradient(circle, rgba(255,255,255,0.15) 2px, transparent 2px)',
           backgroundSize: '24px 24px',
         }}
       >
@@ -38,7 +415,7 @@ export const TEMPLATES: Template[] = [
           className="absolute inset-0"
           style={{
             backgroundImage:
-              'linear-gradient(45deg, rgba(74,111,165,0.1) 25%, transparent 25%, transparent 75%, rgba(74,111,165,0.1) 75%), linear-gradient(-45deg, rgba(74,111,165,0.1) 25%, transparent 25%, transparent 75%, rgba(74,111,165,0.1) 75%)',
+              'linear-gradient(45deg, rgba(0,0,0,0.05) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.05) 75%), linear-gradient(-45deg, rgba(0,0,0,0.05) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.05) 75%)',
             backgroundSize: '4px 4px',
           }}
         />
@@ -49,158 +426,17 @@ export const TEMPLATES: Template[] = [
         <div className="absolute -top-3 -left-2 text-4xl">🌸</div>
         <div className="absolute top-[35%] -right-3 text-3xl rotate-12">🦋</div>
         <div className="absolute bottom-[20%] -left-2 text-3xl">⭐</div>
-      </div>
-    ),
-  },
-  {
-    id: 'denim-arch',
-    name: 'Denim Arch',
-    section: 'biasa',
-    frameCount: 3,
-    frameShape: 'arch',
-    defaultBg: '#2c4a6e',
-    renderBackground: () => (
-      <div
-        className="absolute inset-0 bg-[#2c4a6e]"
-        style={{
-          backgroundImage:
-            'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(74,111,165,0.2) 2px, rgba(74,111,165,0.2) 4px)',
-        }}
-      ></div>
-    ),
-    renderForeground: () => (
-      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-4">
-        <div className="absolute -top-2 left-1/2 -translate-x-1/2 text-4xl">
-          🎀
-        </div>
-        <div className="absolute top-[35%] -right-3 text-3xl">🦋</div>
-        <div className="absolute bottom-[18%] -left-2 text-3xl">🌸</div>
-      </div>
-    ),
-  },
-  {
-    id: 'denim-scallop',
-    name: 'Denim Scallop',
-    section: 'instagram',
-    frameCount: 2,
-    frameShape: 'scallop',
-    defaultBg: '#0d1b3e',
-    renderBackground: () => (
-      <div
-        className="absolute inset-0 bg-[#0d1b3e]"
-        style={{
-          backgroundImage:
-            'radial-gradient(circle, rgba(74,111,165,0.3) 2px, transparent 2px)',
-          backgroundSize: '24px 24px',
-        }}
-      ></div>
-    ),
-    renderForeground: () => (
-      <div className="absolute inset-0 pointer-events-none p-4 flex flex-col justify-between">
-        <div className="text-center text-3xl mt-1">🎀</div>
-        <div className="absolute top-[8%] -left-2 text-3xl">💛</div>
-        <div className="absolute bottom-[15%] -right-2 text-3xl">🌸</div>
-      </div>
-    ),
-  },
-  // ============================================================
-  // COWBOY / WESTERN THEME
-  // ============================================================
-  {
-    id: 'cowboy-star',
-    name: 'Sheriff Star',
-    section: 'biasa',
-    frameCount: 3,
-    frameShape: 'star',
-    defaultBg: '#8b4513',
-    renderBackground: () => (
-      <div
-        className="absolute inset-0 bg-[#8b4513]"
-        style={{
-          backgroundImage:
-            'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(210,180,140,0.15) 10px, rgba(210,180,140,0.15) 20px)',
-        }}
-      >
-        <div className="absolute top-4 left-2 text-[#d2b48c] rotate-12">
-          <Star size={36} fill="currentColor" />
-        </div>
-        <div className="absolute bottom-10 right-2 text-[#d2b48c] -rotate-12">
-          <Star size={40} fill="currentColor" />
-        </div>
-      </div>
-    ),
-    renderForeground: () => (
-      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-4">
-        <div className="font-cherry text-2xl text-[#f5deb3] text-center drop-shadow-sm mt-1">
-          HOWDY!
-        </div>
-        <div className="absolute top-[15%] -left-2 text-4xl rotate-[-15deg]">
-          🤠
-        </div>
-        <div className="absolute top-[45%] -right-2 text-4xl rotate-[15deg]">
-          🌵
-        </div>
-        <div className="absolute bottom-[20%] -left-2 text-3xl">🐴</div>
-      </div>
-    ),
-  },
-  {
-    id: 'cowboy-arch',
-    name: 'Desert Arch',
-    section: 'biasa',
-    frameCount: 3,
-    frameShape: 'arch',
-    defaultBg: '#d2b48c',
-    renderBackground: () => (
-      <div className="absolute inset-0 bg-gradient-to-b from-[#f4a460] to-[#d2b48c]">
         <div
-          className="absolute inset-0 opacity-20"
+          className="font-mono text-[9px] text-[#f5e6d3] text-center font-bold bg-black/30 py-1.5 px-3 rounded-full border-2 border-[#f5e6d3] shadow-sm mx-2 mb-1"
           style={{
-            backgroundImage:
-              'radial-gradient(circle, #8b4513 2px, transparent 2px)',
-            backgroundSize: '20px 20px',
+            borderStyle: 'dashed',
           }}
-        />
-      </div>
-    ),
-    renderForeground: () => (
-      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-4">
-        <div className="absolute -top-2 left-1/2 -translate-x-1/2 text-4xl">
-          👢
+        >
+          ✦ Y2K DENIM ✦
         </div>
-        <div className="absolute top-[35%] -right-3 text-3xl">🪢</div>
-        <div className="absolute bottom-[18%] -left-2 text-3xl">🌵</div>
       </div>
     ),
   },
-  {
-    id: 'cowboy-rect',
-    name: 'Western Bandana',
-    section: 'instagram',
-    frameCount: 2,
-    frameShape: 'rect',
-    defaultBg: '#cd5c5c',
-    renderBackground: () => (
-      <div
-        className="absolute inset-0 bg-[#cd5c5c]"
-        style={{
-          backgroundImage:
-            'linear-gradient(45deg, rgba(255,255,255,0.2) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.2) 75%), linear-gradient(-45deg, rgba(255,255,255,0.2) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.2) 75%)',
-          backgroundSize: '20px 20px',
-        }}
-      ></div>
-    ),
-    renderForeground: () => (
-      <div className="absolute inset-0 pointer-events-none p-4 flex flex-col justify-between">
-        <div className="text-center text-3xl mt-1">🤠</div>
-        <div className="absolute top-[8%] -left-2 text-3xl">⭐</div>
-        <div className="absolute bottom-[15%] -right-2 text-3xl">🐴</div>
-      </div>
-    ),
-  },
-  // ============================================================
-  // HALLOWEEN / SPOOKY THEME
-  // ============================================================
   {
     id: 'spooky-blob',
     name: 'Spooky Blob',
@@ -209,18 +445,18 @@ export const TEMPLATES: Template[] = [
     frameShape: 'blob',
     defaultBg: '#4b0082',
     renderBackground: () => (
-      <div className="absolute inset-0 bg-gradient-to-b from-[#2e0854] to-[#4b0082]">
-        <div className="absolute top-4 left-2 text-purple-300/40 rotate-12">
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent">
+        <div className="absolute top-4 left-2 text-white/30 rotate-12">
           <Ghost size={36} fill="currentColor" />
         </div>
-        <div className="absolute bottom-10 right-2 text-purple-300/40 -rotate-12">
+        <div className="absolute bottom-10 right-2 text-white/30 -rotate-12">
           <Moon size={40} fill="currentColor" />
         </div>
       </div>
     ),
     renderForeground: () => (
       <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-4">
-        <div className="font-cherry text-2xl text-[#ff8c00] text-center drop-shadow-[0_2px_0_#000] mt-1">
+        <div className="font-cherry text-3xl text-[#ff8c00] text-center drop-shadow-[0_2px_0_#000] mt-1">
           BOO!
         </div>
         <div className="absolute top-[15%] -left-2 text-4xl rotate-[-15deg]">
@@ -233,387 +469,474 @@ export const TEMPLATES: Template[] = [
       </div>
     ),
   },
+  // ============================================================
+  // STRIP INSTAGRAM (KOTAK) – 1-2 FRAMES
+  // ============================================================
   {
-    id: 'spooky-cat',
-    name: 'Black Cat',
-    section: 'biasa',
-    frameCount: 3,
-    frameShape: 'cat',
-    defaultBg: '#1a1a1a',
+    id: 'cherry-gingham',
+    name: 'Cherry Gingham',
+    section: 'instagram',
+    frameCount: 2,
+    frameShape: 'rect',
+    defaultBg: '#FFF0F5',
     renderBackground: () => (
       <div
-        className="absolute inset-0 bg-[#1a1a1a]"
+        className="absolute inset-0 border-[10px] border-white/60 opacity-50"
         style={{
           backgroundImage:
-            'radial-gradient(circle, #ff8c00 2px, transparent 2px)',
-          backgroundSize: '24px 24px',
+            'repeating-linear-gradient(0deg, transparent, transparent 14px, currentColor 14px, currentColor 28px), repeating-linear-gradient(90deg, transparent, transparent 14px, currentColor 14px, currentColor 28px)',
+          color: 'rgba(0,0,0,0.1)',
         }}
-      ></div>
+      />
     ),
     renderForeground: () => (
-      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-4">
-        <div className="absolute -top-2 left-1/2 -translate-x-1/2 text-4xl">
-          🐈‍⬛
+      <div className="absolute inset-0 pointer-events-none p-4 flex flex-col justify-between border-4 border-dashed border-white/60 m-1.5 rounded-xl">
+        <div className="bg-white/90 border border-red-300 rounded-full py-1 px-4 w-fit mx-auto font-cherry text-red-400 text-xs shadow-sm rotate-[-1deg] mt-1 flex items-center gap-1">
+          🍒 Picnic Day 🍓
         </div>
-        <div className="absolute top-[35%] -right-3 text-3xl">🕸️</div>
-        <div className="absolute bottom-[18%] -left-2 text-3xl">🍬</div>
+        <div className="absolute top-[5%] left-2 text-4xl">🧺</div>
+        <div className="absolute top-[5%] right-2 text-4xl">🍓</div>
+        <div className="absolute bottom-[10%] left-2 text-3xl">🌷</div>
+        <div className="absolute bottom-[10%] right-2 text-3xl">🥪</div>
       </div>
     ),
   },
   {
-    id: 'spooky-circle',
-    name: 'Magic Moon',
+    id: 'cafe-aesthetic',
+    name: 'Aesthetic Cafe',
+    section: 'instagram',
+    frameCount: 2,
+    frameShape: 'arch',
+    defaultBg: '#EDE0D4',
+    renderBackground: () => (
+      <div
+        className="absolute inset-0 border-[12px] border-black/10 opacity-40"
+        style={{
+          backgroundImage:
+            'radial-gradient(currentColor 2.5px, transparent 2.5px)',
+          backgroundSize: '18px 18px',
+          color: '#000',
+        }}
+      />
+    ),
+    renderForeground: () => (
+      <div className="absolute inset-0 pointer-events-none p-4 flex flex-col justify-between m-1 border border-white/60 rounded-xl">
+        <div className="bg-black/60 text-white font-mono font-bold text-[10px] px-3 py-1 rounded-full border border-white/30 shadow-sm mx-auto flex items-center gap-1.5 mt-1">
+          🏠☕ COFFEE HOUSE 📋
+        </div>
+        <div className="absolute top-[5%] left-2 text-4xl">🏠</div>
+        <div className="absolute top-[5%] right-2 text-4xl">☕</div>
+        <div className="absolute bottom-[10%] left-2 text-3xl">🥐</div>
+        <div className="absolute bottom-[10%] right-2 text-3xl">🥞</div>
+        <div className="flex justify-between items-center px-2 mb-1 text-gray-800 bg-white/70 backdrop-blur-[1px] py-1 rounded-lg border border-white/50">
+          <Croissant size={20} className="rotate-[-10deg]" />
+          <span className="font-pacifico text-[11px] tracking-wide">
+            Warm Memories
+          </span>
+          <Coffee size={20} className="rotate-[10deg]" />
+        </div>
+      </div>
+    ),
+  },
+  {
+    id: 'bakery-cake',
+    name: 'Sweet Bakery',
+    section: 'instagram',
+    frameCount: 2,
+    frameShape: 'oval',
+    defaultBg: '#FFC6FF',
+    renderBackground: () => (
+      <div
+        className="absolute inset-0 opacity-40"
+        style={{
+          backgroundImage:
+            'repeating-linear-gradient(45deg, currentColor 0px, currentColor 15px, transparent 15px, transparent 30px)',
+          color: '#fff',
+        }}
+      />
+    ),
+    renderForeground: () => (
+      <div className="absolute inset-0 pointer-events-none p-4 flex flex-col justify-between border-4 border-white/60 m-1.5 rounded-[2rem] shadow-inner">
+        <div className="bg-white/90 border border-pink-300 font-cherry text-pink-400 text-[10px] px-4 py-1 rounded-full shadow-sm w-fit mx-auto rotate-[1deg] mt-1 flex items-center gap-1">
+          🍰 Patisserie 🍩
+        </div>
+        <div className="absolute top-[5%] left-2 text-4xl">🧁</div>
+        <div className="absolute top-[5%] right-2 text-4xl">🎂</div>
+        <div className="absolute bottom-[10%] left-2 text-3xl">🍪</div>
+        <div className="absolute bottom-[10%] right-2 text-3xl">💕</div>
+        <div className="flex justify-between text-pink-500 bg-white/80 backdrop-blur-sm px-4 py-1 rounded-full border border-white mb-1">
+          <Cake size={20} fill="currentColor" />
+          <span className="font-sans font-bold text-[9px] tracking-wider pt-0.5">
+            SWEET TREATS
+          </span>
+          <Cookie size={20} fill="currentColor" />
+        </div>
+      </div>
+    ),
+  },
+  {
+    id: 'junkfood-party',
+    name: 'Junkfood Party',
+    section: 'instagram',
+    frameCount: 2,
+    frameShape: 'cloud',
+    defaultBg: '#FEF3C7',
+    renderBackground: () => (
+      <div
+        className="absolute inset-0 opacity-30"
+        style={{
+          backgroundImage: 'radial-gradient(currentColor 4px, transparent 4px)',
+          backgroundSize: '20px 20px',
+          color: '#000',
+        }}
+      />
+    ),
+    renderForeground: () => (
+      <div className="absolute inset-0 pointer-events-none p-3 flex flex-col justify-between border-2 border-white/70 m-1.5 rounded-xl bg-gradient-to-b from-transparent via-transparent to-black/5">
+        <div className="bg-amber-500 text-white font-mono text-center font-bold text-[9px] px-3 py-1 rounded-full border border-white shadow-sm rotate-[-1deg] mt-1 flex items-center gap-1">
+          🍔 FOOD TRUCK 🍟
+        </div>
+        <div className="absolute top-[5%] left-2 text-4xl">🍕</div>
+        <div className="absolute top-[5%] right-2 text-4xl">🍟</div>
+        <div className="absolute bottom-[10%] left-2 text-3xl">🌭</div>
+        <div className="absolute bottom-[10%] right-2 text-3xl">🍿</div>
+        <div className="flex justify-between items-center text-lg px-4 bg-white/90 border border-white rounded-full py-1 shadow-sm max-w-[85%] mx-auto mb-1">
+          <span>🌮</span>
+          <Utensils className="text-amber-500 animate-pulse" size={14} />
+          <span>🍿</span>
+        </div>
+      </div>
+    ),
+  },
+  {
+    id: 'y2k-cyber-pop',
+    name: 'Cyber Pop',
+    section: 'instagram',
+    frameCount: 2,
+    frameShape: 'rect',
+    defaultBg: '#E8F0FE',
+    renderBackground: () => (
+      <div
+        className="absolute inset-0 opacity-30"
+        style={{
+          backgroundImage:
+            'linear-gradient(45deg, currentColor 25%, transparent 25%), linear-gradient(-45deg, currentColor 25%, transparent 25%), linear-gradient(45deg, transparent 75%, currentColor 75%), linear-gradient(-45deg, transparent 75%, currentColor 75%)',
+          backgroundSize: '24px 24px',
+          backgroundPosition: '0 0, 0 12px, 12px -12px, -12px 0px',
+          color: '#000',
+        }}
+      />
+    ),
+    renderForeground: () => (
+      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-4 border-[6px] border-white/60 m-1.5 rounded-xl shadow-sm">
+        <div className="bg-white/90 backdrop-blur-sm text-cyan-600 font-mono px-3 py-1 font-bold rounded-md border border-white shadow-sm text-[10px] tracking-wider w-fit mx-auto mt-1 flex items-center gap-1.5">
+          <Gamepad2 size={12} /> system.sys 💾
+        </div>
+        <div className="absolute top-[5%] left-2 text-4xl text-cyan-400">
+          💾
+        </div>
+        <div className="absolute top-[5%] right-2 text-4xl text-cyan-400">
+          🕹️
+        </div>
+        <div className="absolute bottom-[10%] left-2 text-3xl text-cyan-400">
+          ⚡
+        </div>
+        <div className="absolute bottom-[10%] right-2 text-3xl text-cyan-400">
+          👾
+        </div>
+        <div className="flex justify-between items-center text-cyan-600/80 px-2 mb-1 bg-white/80 py-0.5 rounded-md border border-white">
+          <span className="font-mono text-[9px] uppercase tracking-widest font-black">
+            SYSTEM OK v1.0
+          </span>
+          <Heart
+            size={12}
+            fill="currentColor"
+            className="text-pink-400 animate-pulse"
+          />
+        </div>
+      </div>
+    ),
+  },
+  {
+    id: 'disco-fever',
+    name: 'Disco Pixels',
     section: 'instagram',
     frameCount: 2,
     frameShape: 'circle',
-    defaultBg: '#ff8c00',
+    defaultBg: '#F3E8FF',
     renderBackground: () => (
-      <div
-        className="absolute inset-0 bg-[#ff8c00]"
-        style={{
-          backgroundImage:
-            'repeating-linear-gradient(45deg, transparent, transparent 15px, rgba(0,0,0,0.1) 15px, rgba(0,0,0,0.1) 30px)',
-        }}
-      ></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-black/10">
+        <div
+          className="absolute inset-0 opacity-30"
+          style={{
+            backgroundImage:
+              'radial-gradient(circle, currentColor 15%, transparent 16%)',
+            backgroundSize: '16px 16px',
+            color: '#fff',
+          }}
+        />
+      </div>
     ),
     renderForeground: () => (
-      <div className="absolute inset-0 pointer-events-none p-4 flex flex-col justify-between">
-        <div className="text-center text-3xl mt-1">🌙</div>
-        <div className="absolute top-[8%] -left-2 text-3xl">🦇</div>
-        <div className="absolute bottom-[15%] -right-2 text-3xl">🔮</div>
+      <div className="absolute inset-0 pointer-events-none p-4 flex flex-col justify-between border-2 border-white/40 m-2 rounded-xl">
+        <div className="flex justify-center text-gray-800 mt-1 gap-1 bg-white/80 py-1 px-3 rounded-full w-fit mx-auto border border-white shadow-sm">
+          <Moon size={14} fill="currentColor" className="text-amber-300" />
+          <span className="font-sans font-black text-[9px] tracking-widest">
+            RETRO FEVER
+          </span>
+        </div>
+        <div className="absolute top-[5%] left-2 text-4xl">🔮</div>
+        <div className="absolute top-[5%] right-2 text-4xl">💿</div>
+        <div className="absolute bottom-[10%] left-2 text-3xl">🎵</div>
+        <div className="absolute bottom-[10%] right-2 text-3xl">🎧</div>
+        <div className="text-center font-mono font-bold text-gray-800 bg-white/95 backdrop-blur-sm text-[10px] px-3 py-1 tracking-widest uppercase border border-white rounded-full shadow-sm mx-2 mb-1 flex items-center justify-center gap-1">
+          ♫ CLUB ♫
+        </div>
       </div>
     ),
   },
-  // ============================================================
-  // FILM THEME
-  // ============================================================
   {
-    id: 'film-strip',
-    name: 'Film Strip',
-    section: 'biasa',
-    frameCount: 4,
-    frameShape: 'rect',
-    defaultBg: '#1a1a1a',
+    id: 'sunset-mood',
+    name: 'Sunset Vibe',
+    section: 'instagram',
+    frameCount: 2,
+    frameShape: 'oval',
+    defaultBg: '#FFEDD5',
     renderBackground: () => (
-      <div className="absolute inset-0 bg-[#1a1a1a] border-x-[12px] border-black flex flex-col justify-between py-1">
+      <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-white/20 to-transparent">
+        <div className="absolute top-12 left-4 text-white/60">
+          <Cloud size={28} fill="currentColor" />
+        </div>
+        <div className="absolute top-20 right-4 text-white/60">
+          <Star size={14} fill="currentColor" />
+        </div>
+      </div>
+    ),
+    renderForeground: () => (
+      <div className="absolute inset-0 pointer-events-none p-4 flex flex-col justify-between">
+        <div className="text-gray-800 flex justify-between items-center px-2 mt-2 bg-white/50 backdrop-blur-sm py-1 rounded-full border border-white/60">
+          <Sun size={20} fill="currentColor" className="text-amber-500" />
+          <span className="font-sans font-bold text-[9px] tracking-wider">
+            GOLDEN HOUR
+          </span>
+          <Sparkle size={14} fill="currentColor" className="text-yellow-500" />
+        </div>
+        <div className="absolute top-[5%] left-2 text-4xl">🌅</div>
+        <div className="absolute top-[5%] right-2 text-4xl">☁️</div>
+        <div className="absolute bottom-[10%] left-2 text-3xl">⭐</div>
+        <div className="absolute bottom-[10%] right-2 text-3xl">🕊️</div>
+      </div>
+    ),
+  },
+  {
+    id: 'acid-smiley',
+    name: 'Retro Grid',
+    section: 'instagram',
+    frameCount: 2,
+    frameShape: 'rect',
+    defaultBg: '#F8FAFC',
+    renderBackground: () => (
+      <div
+        className="absolute inset-0 border-[6px] border-white/50 opacity-40"
+        style={{
+          backgroundImage:
+            'linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)',
+          backgroundSize: '16px 16px',
+          color: '#000',
+        }}
+      />
+    ),
+    renderForeground: () => (
+      <div className="absolute inset-0 pointer-events-none p-4 flex flex-col justify-between m-1">
+        <div className="flex justify-between items-center px-2 mt-1 text-gray-700 bg-white/80 py-1 rounded-md border border-white shadow-xs">
+          <Smile size={16} className="text-amber-500" />
+          <span className="font-mono text-[8px] tracking-widest font-black">
+            MEMORIES // 2026
+          </span>
+          <Camera size={14} />
+        </div>
+        <div className="absolute top-[5%] left-2 text-4xl">✌️</div>
+        <div className="absolute top-[5%] right-2 text-4xl">📸</div>
+        <div className="absolute bottom-[10%] left-2 text-3xl">🌟</div>
+        <div className="absolute bottom-[10%] right-2 text-3xl">🎈</div>
+      </div>
+    ),
+  },
+  {
+    id: 'kawaii-ramai',
+    name: 'Kawaii Explosion',
+    section: 'instagram',
+    frameCount: 2,
+    frameShape: 'scallop',
+    defaultBg: '#FFF5F9',
+    renderBackground: () => (
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-black/5" />
         {Array.from({
-          length: 20,
+          length: 15,
         }).map((_, i) => (
-          <div key={i} className="w-full flex justify-between px-0.5">
-            <div className="w-2 h-2 bg-white/70 rounded-sm" />
-            <div className="w-2 h-2 bg-white/70 rounded-sm" />
+          <div
+            key={i}
+            className="absolute text-white/60"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              fontSize: `${Math.random() * 16 + 6}px`,
+              transform: `rotate(${Math.random() * 360}deg)`,
+            }}
+          >
+            {['✦', '♥', '☆', '✿', '✧'][Math.floor(Math.random() * 5)]}
           </div>
         ))}
       </div>
     ),
     renderForeground: () => (
-      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-4">
-        <div className="flex justify-between items-center text-[#d4af37] text-[8px] font-mono font-bold px-2 mt-1">
-          <span>ISO 400</span>
-          <span>● REC</span>
-          <span>35mm</span>
+      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-3 border-[8px] border-white/50 m-1 rounded-2xl shadow-inner">
+        <div className="text-center text-2xl mt-1 flex justify-center gap-2">
+          <span>🐱</span>
+          <span>🐶</span>
+          <span>🐰</span>
+          <span>🦊</span>
         </div>
-        <div className="absolute top-[10%] left-2 text-2xl text-[#d4af37]">
-          🎞️
-        </div>
-        <div className="absolute top-[30%] right-2 text-2xl text-[#d4af37]">
-          🎬
-        </div>
-        <div className="absolute bottom-[25%] left-2 text-xl text-[#d4af37]">
-          📸
-        </div>
-        <div className="absolute bottom-[10%] right-2 text-xl text-[#d4af37]">
-          ✨
+        <div className="absolute top-[3%] left-2 text-4xl">🌸</div>
+        <div className="absolute top-[3%] right-2 text-4xl">🌷</div>
+        <div className="absolute bottom-[8%] left-2 text-3xl">🍭</div>
+        <div className="absolute bottom-[8%] right-2 text-3xl">🧁</div>
+        <div className="font-cherry text-center text-pink-500 text-lg bg-white/80 backdrop-blur-sm py-1.5 px-4 rounded-full border-2 border-white shadow-md mx-4 mb-1">
+          ฅ^•ﻌ•^ฅ
         </div>
       </div>
     ),
   },
   {
-    id: 'film-vintage',
-    name: 'Film Vintage',
-    section: 'instagram',
-    frameCount: 2,
-    frameShape: 'rect',
-    defaultBg: '#2a2a2a',
-    renderBackground: () => (
-      <div className="absolute inset-0 bg-gradient-to-b from-[#2a2a2a] to-[#1a1a1a]">
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage:
-              'repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(255,255,255,0.1) 1px, rgba(255,255,255,0.1) 2px)',
-          }}
-        />
-      </div>
-    ),
-    renderForeground: () => (
-      <div className="absolute inset-0 pointer-events-none p-4 flex flex-col justify-between border-2 border-[#d4af37]/30 m-2 rounded">
-        <div className="flex justify-between items-center text-[#d4af37] text-[8px] font-mono font-bold mt-1">
-          <Film size={14} />
-          <span>● REC</span>
-          <Camera size={14} />
-        </div>
-        <div className="absolute top-[8%] -left-2 text-3xl text-[#d4af37]">
-          🎞️
-        </div>
-        <div className="absolute bottom-[15%] -right-2 text-3xl text-[#d4af37]">
-          📸
-        </div>
-      </div>
-    ),
-  },
-  // ============================================================
-  // OCEAN / BEACH THEME
-  // ============================================================
-  {
-    id: 'ocean-scallop',
-    name: 'Ocean Waves',
-    section: 'biasa',
-    frameCount: 3,
-    frameShape: 'scallop',
-    defaultBg: '#0ea5e9',
-    renderBackground: () => (
-      <div className="absolute inset-0 bg-gradient-to-b from-[#38bdf8] to-[#0284c7]">
-        <div
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage:
-              'radial-gradient(circle, #fff 2px, transparent 2px)',
-            backgroundSize: '20px 20px',
-          }}
-        />
-      </div>
-    ),
-    renderForeground: () => (
-      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-4">
-        <div className="absolute -top-2 left-1/2 -translate-x-1/2 text-4xl">
-          🌊
-        </div>
-        <div className="absolute top-[35%] -right-3 text-3xl">🐚</div>
-        <div className="absolute bottom-[18%] -left-2 text-3xl">🐠</div>
-      </div>
-    ),
-  },
-  {
-    id: 'beach-oval',
-    name: 'Beach Day',
+    id: 'midnight-glow',
+    name: 'Midnight Glow',
     section: 'instagram',
     frameCount: 2,
     frameShape: 'oval',
-    defaultBg: '#fde047',
+    defaultBg: '#0B0E1A',
     renderBackground: () => (
-      <div
-        className="absolute inset-0 bg-[#fde047]"
-        style={{
-          backgroundImage:
-            'repeating-linear-gradient(45deg, transparent, transparent 15px, rgba(255,255,255,0.3) 15px, rgba(255,255,255,0.3) 30px)',
-        }}
-      ></div>
-    ),
-    renderForeground: () => (
-      <div className="absolute inset-0 pointer-events-none p-4 flex flex-col justify-between">
-        <div className="text-center text-3xl mt-1">☀️</div>
-        <div className="absolute top-[8%] -left-2 text-3xl">🌴</div>
-        <div className="absolute bottom-[15%] -right-2 text-3xl">🍹</div>
+      <div className="absolute inset-0 overflow-hidden bg-gradient-to-b from-black/40 to-transparent">
+        {Array.from({
+          length: 20,
+        }).map((_, i) => (
+          <div
+            key={i}
+            className="absolute rounded-full bg-white/30"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              width: `${Math.random() * 3 + 1}px`,
+              height: `${Math.random() * 3 + 1}px`,
+              animation: `twinkle ${Math.random() * 4 + 2}s infinite alternate`,
+            }}
+          />
+        ))}
+        <div className="absolute top-8 right-8 text-white/20 text-8xl">🌙</div>
+        <div className="absolute bottom-8 left-8 text-white/10 text-6xl">
+          🌙
+        </div>
       </div>
     ),
-  },
-  // ============================================================
-  // MATCHA CAFE THEME
-  // ============================================================
-  {
-    id: 'matcha-cloud',
-    name: 'Matcha Cloud',
-    section: 'biasa',
-    frameCount: 3,
-    frameShape: 'cloud',
-    defaultBg: '#86efac',
-    renderBackground: () => (
-      <div
-        className="absolute inset-0 bg-[#dcfce7]"
-        style={{
-          backgroundImage:
-            'repeating-conic-gradient(#86efac 0% 25%, transparent 0% 50%)',
-          backgroundSize: '30px 30px',
-        }}
-      ></div>
-    ),
     renderForeground: () => (
-      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-4">
-        <div className="font-cherry text-2xl text-[#166534] text-center drop-shadow-sm mt-1">
-          MATCHA
+      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-5 border-[2px] border-white/20 m-2 rounded-[3rem] bg-black/10 backdrop-blur-[2px]">
+        <div className="flex justify-between items-center px-3 mt-2">
+          <Moon size={28} className="text-amber-300/80" fill="currentColor" />
+          <span className="font-mono text-white/80 text-[8px] tracking-[0.4em] font-bold">
+            ✦ NIGHT ✦
+          </span>
+          <Star size={24} className="text-amber-300/80" fill="currentColor" />
         </div>
-        <div className="absolute top-[15%] -left-2 text-4xl rotate-[-15deg]">
-          🍵
-        </div>
-        <div className="absolute top-[45%] -right-2 text-4xl rotate-[15deg]">
-          🍰
-        </div>
-        <div className="absolute bottom-[20%] -left-2 text-3xl">🌿</div>
+        <div className="absolute top-[5%] left-2 text-4xl">🌠</div>
+        <div className="absolute top-[5%] right-2 text-4xl">🌌</div>
+        <div className="absolute bottom-[10%] left-2 text-3xl">🪐</div>
+        <div className="absolute bottom-[10%] right-2 text-3xl">✨</div>
       </div>
     ),
   },
   {
-    id: 'cafe-arch',
-    name: 'Cafe Arch',
+    id: 'duo-split',
+    name: 'Split Duo',
     section: 'instagram',
     frameCount: 2,
-    frameShape: 'arch',
-    defaultBg: '#d6d3d1',
+    frameShape: 'rect',
+    defaultBg: '#F1F5F9',
     renderBackground: () => (
-      <div
-        className="absolute inset-0 bg-[#f5f5f4]"
-        style={{
-          backgroundImage:
-            'linear-gradient(#e7e5e4 1px, transparent 1px), linear-gradient(90deg, #e7e5e4 1px, transparent 1px)',
-          backgroundSize: '20px 20px',
-        }}
-      ></div>
-    ),
-    renderForeground: () => (
-      <div className="absolute inset-0 pointer-events-none p-4 flex flex-col justify-between">
-        <div className="text-center text-3xl mt-1">☕</div>
-        <div className="absolute top-[8%] -left-2 text-3xl">🥐</div>
-        <div className="absolute bottom-[15%] -right-2 text-3xl">🤎</div>
-      </div>
-    ),
-  },
-  // ============================================================
-  // DREAMY PASTEL THEME
-  // ============================================================
-  {
-    id: 'dreamy-circle',
-    name: 'Dreamy Circle',
-    section: 'biasa',
-    frameCount: 3,
-    frameShape: 'circle',
-    defaultBg: '#fce7f3',
-    renderBackground: () => (
-      <div className="absolute inset-0 bg-gradient-to-br from-[#fce7f3] to-[#fbcfe8]">
+      <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent">
         <div
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 opacity-30"
           style={{
             backgroundImage:
-              'radial-gradient(circle, rgba(255,255,255,0.6) 2px, transparent 2px)',
+              'linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)',
             backgroundSize: '20px 20px',
+            color: '#000',
           }}
         />
+        <div className="absolute top-1/2 left-0 w-full h-px bg-black/20" />
+        <div className="absolute left-1/2 top-0 h-full w-px bg-black/20" />
       </div>
     ),
     renderForeground: () => (
-      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-4">
-        <div className="text-center text-3xl mt-1">🌸</div>
-        <div className="absolute top-[12%] -left-2 text-3xl rotate-[-15deg]">
-          💕
+      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-5 border-2 border-white/60 m-2 rounded-xl">
+        <div className="flex justify-between items-center mt-1">
+          <span className="font-mono text-[10px] text-gray-700 tracking-widest">
+            ✦ DUO ✦
+          </span>
+          <span className="text-gray-500 text-xs">⏺</span>
         </div>
-        <div className="absolute top-[48%] -right-2 text-3xl rotate-[15deg]">
-          ✨
+        <div className="absolute top-[5%] left-3 text-5xl text-gray-500/40 rotate-[-8deg]">
+          ◈
         </div>
-        <div className="absolute bottom-[18%] -left-2 text-2xl">🦋</div>
+        <div className="absolute top-[5%] right-3 text-5xl text-gray-500/40 rotate-[8deg]">
+          ◈
+        </div>
+        <div className="absolute bottom-[10%] left-3 text-3xl text-gray-600">
+          ✦
+        </div>
+        <div className="absolute bottom-[10%] right-3 text-3xl text-gray-600">
+          ✦
+        </div>
       </div>
     ),
   },
   {
-    id: 'pastel-star',
-    name: 'Pastel Star',
+    id: 'single-hero',
+    name: 'Hero Shot',
     section: 'instagram',
-    frameCount: 2,
-    frameShape: 'star',
-    defaultBg: '#ddd6fe',
+    frameCount: 1,
+    frameShape: 'oval',
+    defaultBg: '#0F172A',
     renderBackground: () => (
-      <div className="absolute inset-0 bg-gradient-to-br from-[#ddd6fe] to-[#c4b5fd]">
+      <div className="absolute inset-0 bg-gradient-to-br from-black/30 to-transparent">
         <div
-          className="absolute inset-0 opacity-25"
+          className="absolute inset-0 opacity-30"
           style={{
             backgroundImage:
-              'repeating-linear-gradient(45deg, transparent, transparent 15px, rgba(255,255,255,0.3) 15px, rgba(255,255,255,0.3) 30px)',
+              'radial-gradient(circle at 30% 40%, rgba(255,255,255,0.2) 0%, transparent 50%), radial-gradient(circle at 70% 60%, rgba(255,255,255,0.2) 0%, transparent 50%)',
           }}
         />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full border border-white/20" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full border border-white/20" />
       </div>
     ),
     renderForeground: () => (
-      <div className="absolute inset-0 pointer-events-none p-4 flex flex-col justify-between">
-        <div className="text-center text-3xl mt-1">⭐</div>
-        <div className="absolute top-[8%] -left-2 text-3xl">✨</div>
-        <div className="absolute bottom-[15%] -right-2 text-3xl">🌟</div>
-      </div>
-    ),
-  },
-  // ============================================================
-  // CANDY DOODLE THEME
-  // ============================================================
-  {
-    id: 'heart-stripes',
-    name: 'Heart Stripes',
-    section: 'biasa',
-    frameCount: 3,
-    frameShape: 'heart',
-    defaultBg: '#ffc0cb',
-    renderBackground: () => (
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage:
-            'repeating-linear-gradient(90deg, #ffc0cb 0px, #ffc0cb 30px, #ffb3d9 30px, #ffb3d9 60px, #ffd4e5 60px, #ffd4e5 90px)',
-        }}
-      >
-        <div className="absolute top-4 left-2 text-pink-600 rotate-12">
-          <Heart size={32} fill="currentColor" />
+      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-6 border-[3px] border-white/30 m-3 rounded-[3rem]">
+        <div className="flex justify-end mt-2">
+          <span className="text-white/60 text-xs font-mono tracking-widest">
+            ● HERO
+          </span>
         </div>
-        <div className="absolute bottom-8 right-2 text-pink-600 -rotate-12">
-          <Heart size={40} fill="currentColor" />
+        <div className="absolute top-[5%] left-4 text-7xl text-white/30 rotate-[-12deg]">
+          ✦
         </div>
-      </div>
-    ),
-    renderForeground: () => (
-      <div className="absolute inset-0 pointer-events-none flex flex-col justify-between p-4">
-        <div className="font-cherry text-2xl text-white text-center drop-shadow-[0_2px_0_#db2777] mt-1">
-          LOVE LOVE
+        <div className="absolute top-[5%] right-4 text-6xl text-white/30 rotate-[12deg]">
+          ✦
         </div>
-        <div className="absolute top-[12%] -left-2 text-3xl rotate-[-15deg]">
-          💕
+        <div className="absolute bottom-[10%] left-4 text-4xl text-white/50">
+          ◈
         </div>
-        <div className="absolute top-[50%] -right-2 text-3xl rotate-[15deg]">
-          💖
-        </div>
-        <div className="absolute bottom-[18%] -left-2 text-2xl">💗</div>
-      </div>
-    ),
-  },
-  {
-    id: 'blob-lime',
-    name: 'Blob Lime',
-    section: 'instagram',
-    frameCount: 2,
-    frameShape: 'blob',
-    defaultBg: '#32cd32',
-    renderBackground: () => (
-      <div className="absolute inset-0 bg-gradient-to-br from-[#32cd32] to-[#9acd32]">
-        <div
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage:
-              'repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.3) 20px, rgba(255,255,255,0.3) 40px)',
-          }}
-        />
-        <div className="absolute top-4 left-2 text-white rotate-12">
-          <Sparkles size={32} />
-        </div>
-        <div className="absolute bottom-10 right-2 text-white -rotate-12">
-          <Sparkles size={36} />
-        </div>
-      </div>
-    ),
-    renderForeground: () => (
-      <div className="absolute inset-0 pointer-events-none p-4 flex flex-col justify-between">
-        <div className="font-cherry text-xl text-white text-center drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)] mt-1">
-          FRESH
-        </div>
-        <div className="absolute top-[8%] -left-2 text-3xl rotate-[-12deg]">
-          🍀
-        </div>
-        <div className="absolute bottom-[15%] -right-2 text-3xl rotate-[12deg]">
-          🌿
+        <div className="absolute bottom-[10%] right-4 text-4xl text-white/50">
+          ◈
         </div>
       </div>
     ),
@@ -704,69 +1027,171 @@ export const STICKERS = [
   '💥',
   '🎈',
   '🎉',
+  '🎊',
   '💘',
   '💝',
   '💗',
+  '💓',
+  '💞',
   '💕',
+  '❣',
+  '💌',
   '❤️‍🔥',
+  '🤍',
+  '🤎',
   '☕',
+  '🍵',
+  '🥐',
+  '🥖',
+  '🍞',
+  '🥞',
+  '🧇',
   '🍰',
   '🎂',
+  '🧁',
   '🍩',
   '🍪',
+  '🍯',
+  '🧋',
+  '🥛',
+  '🍫',
+  '🍬',
+  '🍭',
+  '🍮',
+  '🍧',
+  '🍨',
+  '🍦',
+  '🍕',
+  '🍔',
+  '🍟',
+  '🌭',
+  '🥪',
+  '🌮',
+  '🌯',
+  '🍿',
+  '🍛',
+  '🍣',
+  '🍱',
+  '🍙',
+  '🍤',
+  '🧂',
+  '🍳',
+  '🍽️',
+  '🍗',
+  '🍖',
+  '🥟',
+  '🍜',
+  '🍝',
   '🍓',
   '🍒',
   '🍋',
+  '🍇',
+  '🍉',
   '🍑',
+  '🥑',
+  '🥝',
+  '🍹',
+  '🥤',
+  '🍎',
+  '🍍',
+  '🍊',
+  '🍏',
   '🐾',
   '🐱',
   '🐶',
   '🐰',
+  '🐹',
   '🐻',
+  '🐼',
+  '🐻‍❄️',
+  '🐨',
+  '🦊',
+  '🐯',
+  '🦁',
+  '🐮',
+  '🐷',
   '🐸',
+  '🐵',
+  '🐤',
+  '🐧',
+  '🦆',
+  '🦉',
+  '🦄',
+  '🐝',
   '🦋',
+  '🐞',
   '🌸',
   '🌷',
+  '🌹',
   '🌻',
   '🌼',
+  '🌱',
+  '🌿',
+  '🍃',
   '🍄',
+  '🌵',
   '🌈',
   '☁️',
   '☀️',
+  '🌊',
+  '🪐',
+  '🌍',
   '🌙',
   '🧸',
   '💋',
+  '💎',
+  '👑',
   '📸',
+  '📀',
   '💿',
   '🎧',
+  '🎸',
+  '🎹',
+  '🎵',
+  '🎶',
+  '🕹️',
+  '👾',
+  '🎲',
   '🎨',
   '🎬',
-  '✌️',
+  '🎞️',
+  '🎫',
+  '🎟️',
+  '📺',
+  '☎️',
+  '📻',
+  '🕶️',
+  '🛹',
   '😎',
   '😜',
+  '🤩',
+  '🥳',
+  '🤡',
+  '🤠',
+  '👻',
+  '👽',
+  '🤖',
+  '💄',
+  '💅',
+  '🔮',
+  '🧿',
+  '🍀',
   '⚡',
+  '✌️',
+  '✊',
+  '🖐️',
+  '👌',
+  '👍',
+  '🙌',
+  '👏',
+  '🤝',
   '❓',
   '❗',
   '🩷',
   '🫧',
   '💜',
-  '🌿',
-  '🍀',
-  '🌱',
   '😺',
   '💛',
-  '🎞️',
-  '🎟️',
-  '🔮',
   '✦',
   '◈',
-  '🤠',
-  '🌵',
-  '🐴',
-  '👢',
-  '🎃',
-  '👻',
-  '🦇',
-  '🕸️',
-  '🍬',
 ]
